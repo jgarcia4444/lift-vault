@@ -17,6 +17,8 @@
     "tailwindcss": "latest"
   },
   "devDependencies": {
+    "@types/node": "22.15.21",
+    "@types/react": "19.1.4",
     "autoprefixer": "latest",
     "postcss": "latest",
     "prisma": "latest",
