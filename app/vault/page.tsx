@@ -1,4 +1,4 @@
-
+//Vault list page
 import {prisma} from '../../lib/prisma';
 
 export default async function VaultPage() {
