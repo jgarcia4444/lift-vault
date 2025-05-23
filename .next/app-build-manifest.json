@@ -5,10 +5,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
-    "/vault/new/page": [
+    "/vault/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/vault/new/page.js"
+      "static/chunks/app/vault/[id]/page.js"
     ]
   }
 }

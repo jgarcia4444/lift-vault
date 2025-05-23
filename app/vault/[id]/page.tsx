@@ -2,6 +2,8 @@ import { prisma } from '../../../lib/prisma';
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import CopyButton from '../components/CopyButton';
+
 export default async function PromptDetailPage({ params }: { params: { id: string } }) {
   const prompt = await prisma.prompt.findUnique({ where: { id: params.id } })
 
@@ -36,19 +38,4 @@ export default async function PromptDetailPage({ params }: { params: { id: strin
   )
 }
 
-// CopyButton Component
-function CopyButton({ content }: { content: string }) {
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(content)
-    alert('Prompt copied to clipboard!')
-  }
 
-  return (
-    <button
-      onClick={handleCopy}
-      className="text-sm bg-gray-800 text-white px-3 py-1 rounded hover:bg-gray-900"
-    >
-      Copy
-    </button>
-  )
-}
