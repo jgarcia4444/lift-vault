@@ -1,9 +1,9 @@
-
+'use client';
 
 function CopyButton({ content }: { content: string }) {
   const handleCopy = async () => {
     await navigator.clipboard.writeText(content)
-    alert('Prompt copied to clipboard!')
+    console.log('Prompt copied to clipboard!')
   }
 
   return (
