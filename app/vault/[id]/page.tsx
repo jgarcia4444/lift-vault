@@ -1,8 +1,9 @@
+'use client'
 import { prisma } from '../../../lib/prisma';
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import CopyButton from '../components/CopyButton';
+import CopyWrapper from '../../../components/ui/CopyWrapper';
 
 export default async function PromptDetailPage({ params }: { params: { id: string } }) {
   const prompt = await prisma.prompt.findUnique({ where: { id: params.id } })
@@ -23,7 +24,7 @@ export default async function PromptDetailPage({ params }: { params: { id: strin
       </div>
 
       <div className="mt-6 flex gap-4">
-        <CopyButton content={prompt.content} />
+        <CopyWrapper content={prompt.content} />
         <Link href={`/vault/${prompt.id}/edit`} className="text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
           Edit
         </Link>
